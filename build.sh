@@ -3,7 +3,7 @@
 set -e
 
 # Set version info
-BOX_VERSION_BASE=1.1.0
+BOX_VERSION_BASE=0.0.1
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
 export BOX_BASE="centos/7"

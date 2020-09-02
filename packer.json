@@ -65,6 +65,16 @@
       "extra_arguments": [
         "--extra-vars \"minikube_version={{user `minikube_version`}} docker_version={{user `docker_version`}} kubectl_version={{user `kubectl_version`}} helm_version={{user `helm_version`}} kubetail_version={{user `kubetail_version`}}\""
       ]
+    },
+    {
+      "type": "shell",
+      "script": "install-operator-sdk.sh"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo chown -R vagrant:vagrant /home"
+      ]
     }
   ],
   "post-processors": [
