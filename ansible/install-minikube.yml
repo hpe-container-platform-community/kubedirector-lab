@@ -197,3 +197,13 @@
         src: /opt/kubetail-{{ kubetail_version }}/kubetail
         dest: /usr/bin/kubetail
         state: link
+        
+    - name: Install the 'Development tools' package group
+      yum:
+       name: "@Development tools"
+       state: present
+        
+    - name: Remove git* package
+      yum:
+       name: "git*"
+       state: removed
