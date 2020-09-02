@@ -21,8 +21,8 @@ export PACKER_VERSION="v1.6.1"
 export VAGRANT_VERSION="2.2.9"
 
 # Set the Vagrant cloud user and box name (make sure you have admin permissions to, or are the owner of this repository)
-export VAGRANT_CLOUD_BOX_USER="mrvantage"
-export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
+export VAGRANT_CLOUD_BOX_USER="chris-snow"
+export VAGRANT_CLOUD_BOX_NAME="kubedirector-lab"
 
 # ############################################################################################## #
 # Below this point there should be no need to edit anything, unless you know what you are doing! #

@@ -35,8 +35,29 @@
         "sudo yum install -y epel-release",
         "sudo yum install -y python-pip",
         "sudo pip install --upgrade pip",
-        "sudo pip install ansible=={{ user `ansible_version` }}"
+        "sudo pip install ansible=={{ user `ansible_version` }}",
+	"sudo yum groupinstall -y 'Development Tools'",
+	"sudo yum remove -y git*"
       ]
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "script": "install-git-client.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "script": "install-go.sh"
+    },
+    {
+      "type": "file",
+      "source": "package.json",
+      "destination": "/home/vagrant/package.json"
+    },
+    {
+      "type": "shell",
+      "script": "install-theia.sh"
     },
     {
       "type": "ansible-local",
