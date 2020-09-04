@@ -1,0 +1,3 @@
+[submodule "kubedirector"]
+	path = kubedirector
+	url = https://github.com/bluek8s/kubedirector
