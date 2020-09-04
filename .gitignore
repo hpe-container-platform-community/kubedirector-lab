@@ -3,3 +3,4 @@ packer_cache/
 test-vagrant/
 build.env
 .vagrant/
+kubedirector/

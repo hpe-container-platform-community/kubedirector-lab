@@ -23,12 +23,19 @@ The following should be installed on your development environment
 Open a terminal, then enter the following:
 
 ```
-git clone https://github.com/bluek8s/kubedirector
 git clone https://github.com/hpe-container-platform-community/kubedirector-lab
 cd kubedirector-lab
+git clone https://github.com/bluek8s/kubedirector
 vagrant plugin install vagrant-vbguest
-vagrant up # this step can take quiet a long time
+
+# this step can take quiet a long time
+vagrant up
+
+# if you don't want git configured inside vagrant 
 ./run_lab.sh
+
+# if you do want git configured inside vagrant 
+./run_ide.sh
 ```
 
 Open a browser and navigate to: [http://localhost:3000](http://localhost:3000) - this will load the Theia IDE.
