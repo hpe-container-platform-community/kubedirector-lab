@@ -44,6 +44,9 @@ Open a terminal in Theia, from here you can:
 
  - Change to the source code folder for kubedirector (/vagrant/src/github.com/bluek8s/kubedirector)
  - Build and Deploy Kubedirector
+   - `make`
+   - `make deploy`
+   - `make redeploy # if make deploy reports an error`
  - Use `kubectl` to interact with minikube
 
 ### Stop environment
