@@ -1,4 +1,4 @@
-# Vagrant
+# Kubedirector Lab Environment
 
 This document describes how to use [vagrant](https://www.vagrantup.com) to automate setting up a development environment for Kubedirector.
 
