@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.box = "chris-snow/kubedirector-lab"
-  config.vm.box_version = "0.0.2-20200903"
+  config.vm.box_version = "0.0.3-20200904"
 
   config.vm.network "forwarded_port", guest: 3000, host: 3000
 

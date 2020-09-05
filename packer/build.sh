@@ -3,7 +3,7 @@
 set -e
 
 # Set version info
-BOX_VERSION_BASE=0.0.1
+BOX_VERSION_BASE=0.0.4
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
 export BOX_BASE="centos/7"
@@ -65,9 +65,9 @@ fi
 if [ -z "$DEFAULT_VAGRANT_CLOUD_USER" -o -z "$DEFAULT_VAGRANT_CLOUD_TOKEN" ]
 then
     # Ask user for vagrant cloud token
-    echo -n "What is your Vagrant Cloud username? [mrvantage] "
+    echo -n "What is your Vagrant Cloud username? [chris-snow] "
     read user
-    user=${user:-mrvantage}
+    user=${user:-chris-snow}
     export VAGRANT_CLOUD_USER=${user}
 
     # Ask user for vagrant cloud token
@@ -104,17 +104,21 @@ Based on box [${BOX_BASE}](https://app.vagrantup.com/centos/boxes/7) version ${B
 * kubectl ${KUBECTL_VERSION}
 * helm ${HELM_VERSION}
 * kubetail ${KUBETAIL_VERSION}
-
----
-
-$(cat CHANGELOG.md)
+* Operator SDK v0.15.2
+* Golang 1.15
+* Theia IDE latest
 
 ---
 
 ## Source info
-[View source on Github](https://github.com/mrvantage/vagrant-box-centos7-minikube)
+[View source on Github](https://github.com/hpe-container-platform-community/kubedirector-lab)
 
 Built on commit: \`${commit}\`
+
+---
+
+## Credits 
+This box is based on [vagrant-box-centos7-minikube](https://github.com/mrvantage/vagrant-box-centos7-minikube)
 "
 
 echo "${BOX_VERSION_DESCRIPTION}"
@@ -129,3 +133,4 @@ packer build -force -on-error=cleanup packer.json
 
 # Tag git commit for this build
 git tag -a "${BOX_VERSION}" -m "Version ${BOX_VERSION} built."
+

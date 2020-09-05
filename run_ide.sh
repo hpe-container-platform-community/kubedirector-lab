@@ -86,7 +86,7 @@ vagrant ssh -c "
     export SHELL=/bin/bash
     export THEIA_DEFAULT_PLUGINS=local-dir:/home/vagrant/plugins 
     export GOPATH=/home/project
-    export PATH=$PATH:$GOPATH/bin
+    export PATH=\$PATH:\$GOPATH/bin
     
     # set env variables from local environment
     export GIT_USER='$GIT_USER'

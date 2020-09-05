@@ -14,7 +14,6 @@ The following should be installed on your development environment
 
  - [Virtualbox](https://www.virtualbox.org/)
  - [Vagrant](https://www.vagrantup.com/downloads)
- - Linux/OSX local environment (cygwin may work but hasn't been tested)
 
 ## Usage
 
@@ -32,7 +31,7 @@ vagrant plugin install vagrant-vbguest
 vagrant up
 
 # if you don't want git configured inside vagrant 
-./run_lab.sh
+vagrant ssh -c ./run_lab.sh
 
 # if you do want git configured inside vagrant 
 ./run_ide.sh

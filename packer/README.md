@@ -1,14 +1,17 @@
-# vagrant-box-centos7-minikube
+# vagrant-box-kubedirector-lab
 ## Description
-This project contains everything needed to build the centos7-minikube vagrant box. The box is build using Vagrant's packer tool. Currently only a box for the Virtualbox provider is built.
+This project contains everything needed to build the kubedirector-lab vagrant box. The box is build using Vagrant's packer tool. Currently only a box for the Virtualbox provider is built.
 
-The box resulting is based on the centos/7 box. I try to keep the builds up to date with the latest version of this box. Several tools are included in the box:
+The box resulting is based on the centos/7 box. Several tools are included in the box:
 * ansible
 * minikube
 * docker
 * kubectl
+* theia
+* golang
+* operator SDK
 
-Built boxes can be found on [Vagrant Cloud](https://app.vagrantup.com/mrvantage/boxes/centos7-minikube)
+Built boxes can be found on [Vagrant Cloud](https://app.vagrantup.com/chris-snow/boxes/kubedirector-lab)
 
 ## Prerequisites
 To be able to build the box yourself, you'll need at least following tools installed:
@@ -27,11 +30,11 @@ DEFAULT_VAGRANT_CLOUD_USER="your.username"
 DEFAULT_VAGRANT_CLOUD_TOKEN="your.vagrant.cloud.token"
 ```
 
-2. The script will update box `mrvantage/centos7-minikube`. This name is hardcoded in the scripts. If you wish to create a box in your own account, change the following two environment variables in `build.sh`:
+2. The script will update box `chris-snow/kubedirector-lab`. This name is hardcoded in the scripts. If you wish to create a box in your own account, change the following two environment variables in `build.sh`:
 
 ```
-export VAGRANT_CLOUD_BOX_USER="mrvantage"
-export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
+export VAGRANT_CLOUD_BOX_USER="chris-snow"
+export VAGRANT_CLOUD_BOX_NAME="kubedirector-lab"
 ```
 
 3. Make your changes, and commit them in your local git repository.
@@ -45,23 +48,6 @@ export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
 8. Finally, log into your Vagrant Cloud and release the box to make it available for everybody, and publish the GitHub release.
 9. Get yourself a celebratory beer!
 
-## Using the base box
-You can use the base box like any other base box. The box itself is provisioned with Ansible, so if you wish to use Ansible in your provisioning process, you do not need to install Ansible again, as this is already part of the base box.
+## Credits
 
-Configure your `Vagrantfile` as follows to re-use the pre-installed Ansible:
-
-```
-# Provision using Ansible, using the pre-installed Ansible in the base box
-config.vm.provision :ansible_local do |ansible|
-    ansible.playbook = "playbook.yml"
-    ansible.install = false
-    ansible.compatibility_mode = "2.0"
-    ansible.become = true
-end
-```
-
-## Changelog
-You can find the changelog [here](CHANGELOG.md).
-
-## License
-This code is licensed under the [Apache 2.0 license](LICENSE).
+This box was originally forked from https://github.com/mrvantage/vagrant-box-centos7-minikube.
